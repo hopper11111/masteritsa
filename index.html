@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Мастерица | Шагонар</title>
     
-    <!-- Google Analytics 4 -->
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MJD7WDFKR7"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -19,9 +19,10 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap');
         body { font-family: 'Inter', system-ui, sans-serif; }
-        .hero { background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1519904981063-b0cf448d479e') center/cover no-repeat; }
-        .empty-card { transition: all 0.4s; }
-        .empty-card:hover { transform: scale(1.05); }
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.45)), 
+                        url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Khayyrakan_mountain.jpg/1280px-Khayyrakan_mountain.jpg') center/cover no-repeat; 
+        }
     </style>
 </head>
 <body class="bg-[#fffaf0]">
@@ -47,6 +48,12 @@
                 <span id="visits-today" class="font-semibold text-rose-600">142</span>
                 <span class="text-gray-500 text-xs">сейчас онлайн</span>
             </div>
+            <!-- Ссылка на разработчика -->
+            <a href="https://t.me/Cal bakSay" target="_blank" 
+               class="flex items-center gap-2 text-sm text-rose-600 hover:text-rose-700 font-medium">
+                <i class="fab fa-telegram-plane"></i>
+                Вопросы и пожелания: @CalbakSay
+            </a>
             <button onclick="showOwnerDashboard()" class="px-5 py-2 bg-gray-800 hover:bg-black text-white text-sm rounded-2xl flex items-center gap-2">
                 <i class="fas fa-chart-bar"></i> Статистика
             </button>
@@ -54,111 +61,98 @@
     </div>
 </header>
 
-<!-- HOME PAGE -->
+<!-- HOME -->
 <div id="page-home" class="page">
     <section class="hero h-screen flex items-center text-white">
         <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="inline-block bg-white/20 backdrop-blur-md px-6 py-2 rounded-3xl text-sm mb-6">Первые 3 месяца — полностью бесплатно для всех мастерш Шагонара!</div>
             <h2 class="text-6xl font-bold leading-none mb-6">Все мастерши Шагонара<br>в одном месте 💖</h2>
             <p class="text-2xl mb-12">Найди свою или стань ею за 60 секунд</p>
             <button onclick="showPage('masters')" class="px-12 py-6 bg-white text-rose-600 rounded-3xl text-xl font-semibold shadow-2xl">Смотреть свободные места</button>
         </div>
     </section>
-
-    <!-- КАК ЭТО РАБОТАЕТ (подсказки для новичков) -->
-    <section class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-4">Как это работает?</h2>
-            <p class="text-center text-gray-500 mb-12">Простая инструкция для новичков ❤️</p>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="text-center">
-                    <div class="w-16 h-16 mx-auto bg-rose-100 rounded-2xl flex items-center justify-center text-4xl mb-4">📱</div>
-                    <h3 class="font-semibold mb-2">1. Зарегистрируйся</h3>
-                    <p class="text-sm text-gray-600">За 60 секунд по имени и телефону</p>
-                    <p class="text-xs text-rose-500 mt-2">Подсказка: можно прямо сейчас!</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-16 h-16 mx-auto bg-rose-100 rounded-2xl flex items-center justify-center text-4xl mb-4">📸</div>
-                    <h3 class="font-semibold mb-2">2. Добавь работы</h3>
-                    <p class="text-sm text-gray-600">Фото и видео своих работ</p>
-                    <p class="text-xs text-rose-500 mt-2">Подсказка: можно загружать сколько угодно</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-16 h-16 mx-auto bg-rose-100 rounded-2xl flex items-center justify-center text-4xl mb-4">🗓️</div>
-                    <h3 class="font-semibold mb-2">3. Укажи график</h3>
-                    <p class="text-sm text-gray-600">Когда ты свободна</p>
-                    <p class="text-xs text-rose-500 mt-2">Подсказка: можно отмечать «Сегодня свободна»</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-16 h-16 mx-auto bg-rose-100 rounded-2xl flex items-center justify-center text-4xl mb-4">💬</div>
-                    <h3 class="font-semibold mb-2">4. Получай клиенток</h3>
-                    <p class="text-sm text-gray-600">Прямо в чате сайта</p>
-                    <p class="text-xs text-rose-500 mt-2">Подсказка: девушки из Шагонара уже ищут тебя</p>
-                </div>
-            </div>
-        </div>
-    </section>
 </div>
 
-<!-- MASTERS PAGE (пустые красивые окна) -->
+<!-- MASTERS -->
 <div id="page-masters" class="page hidden">
     <div class="max-w-6xl mx-auto px-6 py-12">
         <div class="text-center mb-12">
             <h2 class="text-4xl font-bold mb-3">Мастера Шагонара</h2>
-            <p class="text-xl text-gray-600">Пока здесь пусто... но ты можешь стать первой! 💖</p>
+            <p class="text-xl text-gray-600">Пока здесь пусто… но ты можешь стать первой! 💖</p>
         </div>
-        <div id="placeholders-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8"></div>
+        <div id="placeholders-grid" class="grid grid-cols-2 md:grid-cols-3 gap-8"></div>
     </div>
 </div>
 
-<!-- BECOME PAGE -->
+<!-- BECOME + ТАРИФЫ -->
 <div id="page-become" class="page hidden py-20 bg-white">
-    <div class="max-w-2xl mx-auto px-6 text-center">
+    <div class="max-w-4xl mx-auto px-6 text-center">
         <h2 class="text-4xl font-bold mb-6">Это твоё место, мастерица!</h2>
-        <p class="text-xl text-gray-600 mb-10">Регистрация за 60 секунд. Никаких документов и сложностей.</p>
+        <p class="text-xl text-gray-600 mb-10">Регистрация за 60 секунд. Никаких документов.</p>
         <button onclick="registerMaster()" class="px-12 py-6 bg-rose-500 text-white text-xl rounded-3xl shadow-xl">Занять своё место прямо сейчас</button>
-        <p class="text-xs text-gray-500 mt-8">Подсказка для новичков: после регистрации сразу загружай свои лучшие работы — так тебя быстрее найдут</p>
+
+        <div class="mt-20">
+            <h3 class="text-3xl font-bold mb-10">Тарифы</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+                <div class="border-2 border-gray-200 rounded-3xl p-10">
+                    <h4 class="text-2xl font-bold mb-2">Бесплатный</h4>
+                    <p class="text-5xl font-bold text-gray-400">0 ₽</p>
+                    <p class="text-rose-600 font-medium">Первые 3 месяца</p>
+                    <ul class="mt-8 space-y-3 text-left">
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> Красивый профиль</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> Фото и видео работ</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> Чат с клиентками</li>
+                    </ul>
+                </div>
+                <div class="border-2 border-rose-500 bg-rose-50 rounded-3xl p-10 relative">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-rose-500 text-white px-6 py-1 rounded-full text-sm font-medium">С 4-го месяца</div>
+                    <h4 class="text-2xl font-bold mb-2">Премиум</h4>
+                    <p class="text-5xl font-bold text-rose-600">300 ₽</p>
+                    <p class="text-rose-600 font-medium">в месяц</p>
+                    <ul class="mt-8 space-y-3 text-left">
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> Всё из бесплатного</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> Топ в поиске</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> Выделенный профиль</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> Приоритетные уведомления</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
-<!-- WELCOME MODAL (для новичков) -->
+<!-- Welcome modal -->
 <div id="welcome-modal" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-[300]">
     <div class="bg-white max-w-lg mx-4 rounded-3xl p-8 text-center">
         <div class="text-6xl mb-6">💖</div>
         <h3 class="text-3xl font-bold mb-4">Добро пожаловать в Мастерицу!</h3>
-        <p class="text-lg text-gray-600 mb-8">Это тёплое место для девушек Шагонара, которые делают красоту.<br>Здесь ты можешь найти мастершу или стать ею.</p>
-        <button onclick="closeWelcome()" class="px-10 py-4 bg-rose-500 text-white rounded-2xl text-lg">Понятно, иду смотреть места!</button>
-        <p class="text-xs text-gray-400 mt-6">Подсказка: первый раз зашёл — этот экран больше не появится</p>
+        <p class="text-lg text-gray-600 mb-8">Первые 3 месяца — бесплатно для всех.<br>Гора Хайыракан смотрит на нас ❤️</p>
+        <a href="https://t.me/Cal bakSay" target="_blank" 
+           class="block mx-auto w-fit px-8 py-4 bg-green-500 hover:bg-green-600 text-white rounded-2xl text-lg flex items-center gap-3">
+            <i class="fab fa-telegram-plane"></i>
+            Вопросы и пожелания: @CalbakSay
+        </a>
     </div>
 </div>
 
 <script>
-// Google Analytics
 function trackEvent(eventName, params = {}) {
     if (typeof gtag !== 'undefined') gtag('event', eventName, params);
 }
 
-// Счётчик онлайн
 let visitsToday = 142;
 setInterval(() => {
     visitsToday += Math.floor(Math.random()*3)+1;
     document.getElementById('visits-today').textContent = visitsToday;
 }, 8000);
 
-// Рендер пустых красивых окон
 function renderPlaceholders() {
     const grid = document.getElementById('placeholders-grid');
     grid.innerHTML = '';
-    const texts = [
-        "Это твоё место, мастерица! 💅",
-        "Здесь будут твои фото работ ✨",
-        "Здесь будут твои видео ❤️",
-        "Здесь тебя найдут клиентки",
-        "Стань первой в Шагонаре!",
-        "Твои клиентки уже ждут"
-    ];
+    const texts = ["Это твоё место, мастерица! 💅","Здесь будут твои фото работ ✨","Здесь будут твои видео ❤️","Здесь тебя найдут клиентки","Стань первой в Шагонаре!","Твои клиентки уже ждут"];
     for (let i = 0; i < 6; i++) {
         const div = document.createElement('div');
-        div.className = 'empty-card bg-white rounded-3xl overflow-hidden shadow-md border border-rose-100';
+        div.className = 'bg-white rounded-3xl overflow-hidden shadow-md border border-rose-100 hover:border-rose-300 transition';
         div.innerHTML = `
             <div class="h-64 bg-gradient-to-br from-pink-100 via-rose-100 to-purple-100 flex items-center justify-center">
                 <div class="text-center">
@@ -175,44 +169,35 @@ function renderPlaceholders() {
     }
 }
 
-// Страницы
 function showPage(page) {
     document.querySelectorAll('.page').forEach(p => p.classList.add('hidden'));
-    document.getElementById('page-' + page).classList.remove('hidden');
-    trackEvent('page_view', { page_title: page });
+    document.getElementById('page-'+page).classList.remove('hidden');
+    trackEvent('page_view', {page_title: page});
 }
 
-// Регистрация
 function registerMaster() {
     const name = prompt('Как тебя зовут, красавица? 😊', 'Айлана');
     if (!name) return;
-    alert(`Добро пожаловать, ${name}! 🎉\nТвоё место уже занято! Теперь загружай фото и видео работ — и клиентки сами напишут тебе.`);
-    trackEvent('master_registration_completed', { name });
+    alert(`Добро пожаловать, ${name}! 🎉\nТвоё место занято. Первые 3 месяца — бесплатно!`);
+    trackEvent('master_registration_completed', {name});
 }
 
-// Welcome modal (показывается только первый раз)
+function showOwnerDashboard() {
+    alert('📊 Статистика открыта!\n\nСегодня: ' + visitsToday + ' человек\nПолная аналитика в Google Analytics');
+}
+
 function showWelcome() {
-    if (!localStorage.getItem('welcomeShown')) {
-        document.getElementById('welcome-modal').classList.remove('hidden');
-    }
+    if (!localStorage.getItem('welcomeShown')) document.getElementById('welcome-modal').classList.remove('hidden');
 }
 function closeWelcome() {
     document.getElementById('welcome-modal').classList.add('hidden');
     localStorage.setItem('welcomeShown', 'true');
 }
 
-// Owner dashboard (оставил как есть)
-function showOwnerDashboard() {
-    alert('📊 Статистика открыта!\n\nСегодня: ' + visitsToday + ' человек\nПолные данные смотри в Google Analytics (G-MJD7WDFKR7)');
-    trackEvent('view_owner_dashboard');
-}
-
-// Запуск
 window.onload = () => {
     renderPlaceholders();
     showPage('home');
-    showWelcome();           // подсказка для новичков
-    setInterval(() => trackEvent('site_active'), 30000);
+    showWelcome();
 };
 </script>
 </body>
